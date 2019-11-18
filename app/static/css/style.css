@@ -1,0 +1,56 @@
+/*!
+ * 自定义css文件
+ */
+
+/***********************
+ * 通用
+ **********************/
+.banner {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e7eaed;
+  border-radius: 0.3rem;
+}
+
+
+/***********************
+ * 关于页面
+ **********************/
+.about {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+
+/***********************
+ * 页脚
+ **********************/
+footer {
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eaeaea;
+  color: #999999;
+}
+
+footer a {
+  color: #999999;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+footer .copyright {
+  float: left;
+  margin-left: 25px;
+}
+
+footer .footer-nav {
+  float: right;
+  margin-right: 25px;
+}

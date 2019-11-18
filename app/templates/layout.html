@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>
+      {% block title %}{% endblock %} - Flask Web Template
+    </title>
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <!--样式文件-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <!--移动端自适应-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!--导航栏-->
+    {% include "navbar.html" %}
+    <!--主要内容-->
+    {% block content %}
+    {% endblock %}
+    <!--页脚-->
+    {% include "footer.html" %}
+    <!--最后引入js文件，加快页面加载-->
+    <!--bootstrap.js依赖jquery.js和popper.js，所以要按顺序引入-->
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+</html>
