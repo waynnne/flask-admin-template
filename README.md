@@ -1,2 +1,2 @@
-# flask-web-template
-使用flask+bootstrap快速搭建一个简单网站。
+# flask-admin-template
+使用flask+adminlte快速搭建一个简单网站。
