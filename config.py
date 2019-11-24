@@ -12,13 +12,13 @@ class Config(object):
 class DevConfig(Config):
     ''' 开发环境配置 '''
     SECRET_KEY = "dev_secret_key"
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://test:Qwerty123!@#@127.0.0.1:3306/flask_admin?charset=utf8"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://test:Qwerty123!@#@127.0.0.1:3306/flask_admin?charset=utf8mb4"
 
 class ProdConfig(Config):
     ''' 生产环境配置 '''
     DEBUG = False
     SECRET_KEY = "prod_secret_key"
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:youwillneverguess@127.0.0.1:3306/flask_admin?charset=utf8"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:youwillneverguess@127.0.0.1:3306/flask_admin?charset=utf8mb4"
 
 
 configs = {
