@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+  {# 移动端自适应 #}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% block title %}{% endblock %} - Flask Admin Template</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
+  <!-- FontAwesome图标 -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fa/css/all.min.css') }}">
+  <!-- 自定义样式 -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+
+
+<body class="hold-transition auth-page">
+  <div class="auth-box">
+    <div class="auth-logo">
+      <a><b>Flask</b> Admin Template</a>
+    </div>
+
+    <div class="card">
+      <div class="card-body auth-card-body">
+        <p class="auth-box-title">{% block login_or_register %}{% endblock %}</p>
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+
+  <!-- js引用 -->
+  <script src="{{ url_for('static', filename='plugins/jquery/jquery-3.4.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='plugins/popper/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.js') }}"></script>
+  <!-- /.结束js引用 -->
+</body>
+</html>

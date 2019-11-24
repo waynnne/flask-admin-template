@@ -1,0 +1,53 @@
+/*!
+ * 自定义css文件
+ */
+
+
+/***********************
+ * 登录、注册页面
+ **********************/
+.auth-page {
+  align-items: center;
+  background: #e9ecef;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.auth-box {
+  width: 300px;
+  color: #666;
+}
+
+@media (max-width: 576px) {
+  .auth-box {
+    width: 80%;
+  }
+}
+
+.auth-logo {
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin-bottom: .9rem;
+  text-align: center;
+}
+
+.auth-box-title {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.auth-card-box .card {
+  box-shadow: 0 0 1px rgba(0, 0, 0, .125), 0 6px 11px rgba(0,0,0,0.2);
+  margin-bottom: 1rem;
+  border: unset;
+  border-radius: unset;
+}
+
+.auth-card-bottom {
+  font-size: 14px;
+}
+
+.auth-card-bottom > a {
+  color: #666;
+}

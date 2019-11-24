@@ -1,0 +1,14 @@
+{% extends "public/auth_base.html" %}
+{% import "public/_wtf.html" as _wtf %}
+
+{% block title %}注册{% endblock %}
+
+{% block login_or_register %}注册账号{% endblock %}
+
+{% block content %}
+  {{ _wtf.quick_form(form, form_type="inline", button_map={'submit':'success', }, id='register_form') }}
+
+  <div class="auth-card-bottom">
+    <a href="{{ url_for('login1') }}">已有账号，去登录</a>
+  </div>
+{% endblock %}
