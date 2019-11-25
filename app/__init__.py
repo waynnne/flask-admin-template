@@ -17,4 +17,4 @@ bootstrap = Bootstrap(app)
 login = LoginManager(app)
 login.login_view = 'login'
 
-from app import route, models
+from app import route, models, errors

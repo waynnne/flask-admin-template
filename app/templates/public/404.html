@@ -1,0 +1,12 @@
+{% extends "public/layout.html" %}
+{% block title %}404{% endblock %}
+{% block content_title %}错误{% endblock %}
+{% block content_locator %}404{% endblock %}
+{% block content %}
+<!-- 自适应宽度容器 -->
+<div class="container-fluid">
+  <h1>File Not Found</h1>
+  <p><a href="{{ url_for('admin') }}">返回首页</a></p>
+</div>
+<!-- /.结束自适应宽度容器 -->
+{% endblock %}

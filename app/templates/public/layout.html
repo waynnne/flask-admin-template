@@ -33,33 +33,39 @@
       </ul>
       <!-- 右侧导航链接 -->
       <ul class="navbar-nav ml-auto">
-        <!-- 用户信息下拉菜单 -->
+        <!-- 如果已登录，显示用户信息下拉菜单 -->
         <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="fas fa-user-circle fa-lg"></i>
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <div class="dropdown-item">
-              <div class="media">
-                <img src="{{ url_for('static', filename='img/avatar.jpg') }}" alt="Avatar" class="img-size-64 mr-3 img-circle">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">{{ user.username }}</h3>
-                  <p class="text-sm">{{ user.email }}</p>
-                  <div class="row">
-                    <div class="col-6">
-                      <a href="{{ url_for('admin') }}"><i class="fas fa-home"></i>首页</a>
-                    </div>
-                    <div class="col-6">
-                      <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>退出</a>
+          {% if current_user and current_user.is_authenticated %}
+            <a class="nav-link" data-toggle="dropdown" href="#">
+              <i class="fas fa-user-circle fa-lg"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+              <div class="dropdown-item">
+                <div class="media">
+                  <img src="{{ url_for('static', filename='img/avatar.jpg') }}" alt="Avatar" class="img-size-64 mr-3 img-circle">
+                  <div class="media-body">
+                    <h3 class="dropdown-item-title">{{ current_user.username }}</h3>
+                    <p class="text-sm">{{ current_user.email }}</p>
+                    <div class="row">
+                      <div class="col-6">
+                        <a href="{{ url_for('admin') }}"><i class="fas fa-home"></i>首页</a>
+                      </div>
+                      <div class="col-6">
+                        <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>退出</a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <div class="dropdown-item">
+                <p>aaa</p>
+              </div>
             </div>
-            <div class="dropdown-item">
-              <p>aaa</p>
-            </div>
-          </div>
+          {% else %}
+            <a class="nav-link">
+              <i class="fas fa-user-slash fa-lg"></i>
+            </a>
+          {% endif %}
         </li>
       </ul>
     </nav>
