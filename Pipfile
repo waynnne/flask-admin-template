@@ -13,6 +13,7 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 bootstrap-flask = "*"
 pymysql = "*"
+flask-login = "*"
 
 [requires]
 python_version = "3.6"

@@ -43,20 +43,16 @@
               <div class="media">
                 <img src="{{ url_for('static', filename='img/avatar.jpg') }}" alt="Avatar" class="img-size-64 mr-3 img-circle">
                 <div class="media-body">
-                  <h3 class="dropdown-item-title">
-{#                    {{ user.name }}#}
-                    Wayne Lee
-                  </h3>
-{#                  <p class="text-sm">{{ user.mail }}</p>#}
-                  <p class="text-sm">229202861@qq.com</p>
-                  <ul>
-                    <li>
-                      <button><i class="fas fa-home"></i>首页</button>
-                    </li>
-                    <li>
-                      <button><i class="fas fa-sign-out-alt"></i>退出</button>
-                    </li>
-                  </ul>
+                  <h3 class="dropdown-item-title">{{ user.username }}</h3>
+                  <p class="text-sm">{{ user.email }}</p>
+                  <div class="row">
+                    <div class="col-6">
+                      <a href="{{ url_for('admin') }}"><i class="fas fa-home"></i>首页</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>退出</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
