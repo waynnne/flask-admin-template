@@ -1,7 +1,7 @@
 {% extends "public/layout.html" %}
-{% block title %}500{% endblock %}
-{% block content_title %}错误{% endblock %}
-{% block content_locator %}500{% endblock %}
+{% block title %}500{% endblock title %}
+{% block content_title %}错误{% endblock content_title %}
+{% block content_locator %}500{% endblock content_locator %}
 {% block content %}
 <!-- 自适应宽度容器 -->
 <div class="container-fluid">
@@ -10,4 +10,4 @@
     <p><a href="{{ url_for('admin') }}">返回首页</a></p>
 </div>
 <!-- /.结束自适应宽度容器 -->
-{% endblock %}
+{% endblock content %}

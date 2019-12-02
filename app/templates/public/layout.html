@@ -6,7 +6,7 @@
   {# 移动端自适应 #}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{% block title %}{% endblock %} - Flask Admin Template</title>
+  <title>{% block title %}{% endblock title %} - Flask Admin Template</title>
 
   <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
   <!-- FontAwesome图标 -->
@@ -128,12 +128,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-dark">{% block content_title %}{% endblock %}</h1>
+              <h1 class="m-0 text-dark">{% block content_title %}{% endblock content_title %}</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">{% block content_locator %}{% endblock %}</li>
+                <li class="breadcrumb-item active">{% block content_locator %}{% endblock content_locator %}</li>
               </ol>
             </div>
           </div>
@@ -152,7 +152,7 @@
 {#          {% endwith %}#}
 {#        </div><!-- /.notify -->#}
 
-        {% block content %}{% endblock %}
+        {% block content %}{% endblock content %}
 
       </div> <!-- /.content -->
     </div><!-- /.content-wrapper -->
@@ -201,7 +201,7 @@
     {% endwith %}
 
   </script>
-  {% endblock %}
+  {% endblock scripts %}
 
 </body>
 </html>

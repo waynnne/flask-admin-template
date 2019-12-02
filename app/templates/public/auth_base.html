@@ -6,7 +6,7 @@
   {# 移动端自适应 #}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{% block title %}{% endblock %} - Flask Admin Template</title>
+  <title>{% block title %}{% endblock title %} - Flask Admin Template</title>
 
   <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
   <!-- FontAwesome图标 -->
@@ -24,8 +24,8 @@
 
     <div class="card">
       <div class="card-body auth-card-body">
-        <p class="auth-box-title">{% block login_or_register %}{% endblock %}</p>
-        {% block content %}{% endblock %}
+        <p class="auth-box-title">{% block login_or_register %}{% endblock login_or_register %}</p>
+        {% block content %}{% endblock content %}
       </div>
     </div>
   </div>

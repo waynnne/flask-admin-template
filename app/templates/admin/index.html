@@ -1,7 +1,7 @@
 {% extends "public/layout.html" %}
-{% block title %}主页{% endblock %}
-{% block content_title %}控制台{% endblock %}
-{% block content_locator %}控制台{% endblock %}
+{% block title %}主页{% endblock title %}
+{% block content_title %}控制台{% endblock content_title %}
+{% block content_locator %}控制台{% endblock content_locator %}
 {% block content %}
 <!-- 自适应宽度容器 -->
 <div class="container-fluid">
@@ -43,7 +43,7 @@
   </div> <!-- /.row -->
 </div> <!-- /.container-fluid 结束自适应宽度容器 -->
 
-{% endblock %}
+{% endblock content %}
 
 {% block scripts %}
 {{ super() }}
@@ -101,4 +101,4 @@
   }
 
 </script>
-{% endblock %}
+{% endblock scripts %}
