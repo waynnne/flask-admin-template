@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
   <!-- FontAwesome图标 -->
   <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fa/css/all.min.css') }}">
+  <!-- sweetalert2弹窗 -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/sweetalert2/sweetalert2.min.css') }}">
   <!-- adminlte主样式 -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/adminlte.min.css') }}">
+{#  <link rel="stylesheet" href="{{ url_for('static', filename='css/adminlte.css') }}">#}
   <!-- 自定义样式 -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
 </head>
@@ -25,7 +27,7 @@
       <!-- 左侧导航链接 -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <button class="nav-link btn" data-widget="pushmenu" ><i class="fas fa-bars fa-lg"></i></button>
+          <a class="nav-link btn" data-widget="pushmenu" ><i class="fas fa-bars fa-lg"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="{{ url_for('admin') }}" class="nav-link">首页</a>
@@ -77,7 +79,7 @@
       <div class="brand-link">
         <img src="{{ url_for('static', filename='img/avatar.jpg') }}" alt="Logo" class="brand-image img-circle elevation-3"
              style="opacity: .9">
-        <span class="brand-text font-weight-light">Flask Admin Template</span>
+        <span class="brand-text font-weight-light">Flask Admin</span>
       </div>
       <!-- 侧栏菜单 -->
       <div class="sidebar">
@@ -140,20 +142,20 @@
       <!-- /.结束页面头部信息 -->
       <!-- 页面内容，子节点为每个页面需要填充的具体内容 -->
       <div class="content">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
+{#        <div class="notify">#}
+{#          {% with messages = get_flashed_messages() %}#}
+{#            {% if messages %}#}
+{#              {% for message in messages %}#}
+{#                <li>{{ message }}</li>#}
+{#              {% endfor %}#}
+{#            {% endif %}#}
+{#          {% endwith %}#}
+{#        </div><!-- /.notify -->#}
+
         {% block content %}{% endblock %}
-      </div>
-      <!-- /.结束页面内容 -->
-    </div>
-    <!-- /.结束主内容页面包装 -->
+
+      </div> <!-- /.content -->
+    </div><!-- /.content-wrapper -->
 
     <!-- 固定底栏-->
     <footer class="main-footer">
@@ -167,11 +169,39 @@
   <!-- /.结束整体页面 -->
 
   <!-- js引用 -->
+  {% block scripts %}
   <script src="{{ url_for('static', filename='plugins/jquery/jquery-3.4.1.min.js') }}"></script>
   <script src="{{ url_for('static', filename='plugins/popper/popper.min.js') }}"></script>
   <script src="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='plugins/sweetalert2/sweetalert2.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/adminlte.min.js') }}"></script>
   <!-- /.结束js引用 -->
+
+  <script type="text/javascript">
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      timer: 3000
+    })
+
+    {% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+        var msg = '{{ message }}'
+        if (msg != '' && msg.indexOf('登录') != -1) {
+          setTimeout(function () {
+            console.log("登录信息 ==> " + msg)
+            Toast.fire({
+              icon: 'success',
+              title: msg
+            })
+          }, 200)
+        }
+      {% endfor %}
+    {% endwith %}
+
+  </script>
+  {% endblock %}
 
 </body>
 </html>
