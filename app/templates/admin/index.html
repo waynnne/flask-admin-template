@@ -28,7 +28,77 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- /.结束自适应宽度容器 -->
+    <div class="col-lg-6">
+      <div class="card card-primary card-outline">
+        <div class="card-header">
+          <h5 class="m-0">sweetalert2弹窗</h5>
+        </div>
+        <div class="card-body">
+          <a href="#" class="btn btn-primary sweetNormal" onclick="alertSuccess()">成功弹窗</a>
+          <a href="#" class="btn btn-primary sweetNormal" onclick="alertWithButton()">带取消按钮</a>
+          <a href="#" class="btn btn-primary sweetNormal" onclick="alertWithBootstrapButton()">Bootstrap样式</a>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /.row -->
+</div> <!-- /.container-fluid 结束自适应宽度容器 -->
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+    confirmButton: 'ml-2 btn btn-success',
+    cancelButton: 'mr-2 btn btn-danger'
+    },
+    buttonsStyling: false
+  })
+
+  function alertSuccess () {
+    Toast.fire({
+      icon: 'success',
+      title: "操作成功！"
+    })
+  }
+
+  function alertWithButton () {
+    Toast.fire({
+      icon: 'success',
+      title: "操作成功！"
+    })
+  }
+
+  function alertWithBootstrapButton () {
+    swalWithBootstrapButtons.fire({
+      title: '确定删除？',
+      text: "该操作将不能撤销",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: '删除',
+      cancelButtonText: '取消',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+        swalWithBootstrapButtons.fire(
+          '删除成功！',
+          '文件已成功删除',
+          'success'
+        )
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          '已取消',
+          '文件没有被删除 :)',
+          'error'
+        )
+      }
+    })
+  }
+
+</script>
 {% endblock %}
