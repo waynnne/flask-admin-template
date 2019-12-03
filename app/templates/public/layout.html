@@ -30,7 +30,7 @@
           <a class="nav-link btn" data-widget="pushmenu" ><i class="fas fa-bars fa-lg"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="{{ url_for('admin') }}" class="nav-link">首页</a>
+          <a href="{{ url_for('public.admin') }}" class="nav-link">首页</a>
         </li>
       </ul>
       <!-- 右侧导航链接 -->
@@ -50,10 +50,10 @@
                     <p class="text-sm">{{ current_user.email }}</p>
                     <div class="row">
                       <div class="col-6">
-                        <a href="{{ url_for('admin') }}"><i class="fas fa-home"></i>首页</a>
+                        <a href="{{ url_for('public.admin') }}"><i class="fas fa-home"></i>首页</a>
                       </div>
                       <div class="col-6">
-                        <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>退出</a>
+                        <a href="{{ url_for('auth.logout') }}"><i class="fas fa-sign-out-alt"></i>退出</a>
                       </div>
                     </div>
                   </div>

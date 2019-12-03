@@ -2,8 +2,8 @@
 # Author : waynnne
 # Date   : 2019-11-19 23:57
 
-from app import db
-from app import login
+from app.extensions import db
+from app.extensions import login
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
