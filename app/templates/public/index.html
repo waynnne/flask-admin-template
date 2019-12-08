@@ -1,104 +1,17 @@
 {% extends "public/layout.html" %}
 {% block title %}主页{% endblock title %}
-{% block content_title %}控制台{% endblock content_title %}
+{% block content_title %}首页{% endblock content_title %}
 {% block content_locator %}控制台{% endblock content_locator %}
 {% block content %}
 <!-- 自适应宽度容器 -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6">
-      <div class="card card-primary card-outline">
-        <div class="card-header">
-          <h5 class="m-0">Featured</h5>
-        </div>
-        <div class="card-body">
-          <h6 class="card-title">Special title treatment</h6>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6">
-      <div class="card card-primary card-outline">
-        <div class="card-header">
-          <h5 class="m-0">sweetalert2弹窗</h5>
-        </div>
-        <div class="card-body">
-          <a href="#" class="btn btn-primary sweetNormal" onclick="alertSuccess()">成功弹窗</a>
-          <a href="#" class="btn btn-primary sweetNormal" onclick="alertWithButton()">带取消按钮</a>
-          <a href="#" class="btn btn-primary sweetNormal" onclick="alertWithBootstrapButton()">Bootstrap样式</a>
-        </div>
-      </div>
-    </div>
-  </div> <!-- /.row -->
-</div> <!-- /.container-fluid 结束自适应宽度容器 -->
+
+  <p>test</p>
 
 {% endblock content %}
 
 {% block scripts %}
 {{ super() }}
 <script>
-
-  const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-    confirmButton: 'ml-2 btn btn-success',
-    cancelButton: 'mr-2 btn btn-danger'
-    },
-    buttonsStyling: false
-  })
-
-  function alertSuccess () {
-    Toast.fire({
-      icon: 'success',
-      title: "操作成功！"
-    })
-  }
-
-  function alertWithButton () {
-    Toast.fire({
-      icon: 'success',
-      title: "操作成功！"
-    })
-  }
-
-  function alertWithBootstrapButton () {
-    swalWithBootstrapButtons.fire({
-      title: '确定删除？',
-      text: "该操作将不能撤销",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: '删除',
-      cancelButtonText: '取消',
-      reverseButtons: true
-    }).then((result) => {
-      if (result.value) {
-        swalWithBootstrapButtons.fire(
-          '删除成功！',
-          '文件已成功删除',
-          'success'
-        )
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
-        swalWithBootstrapButtons.fire(
-          '已取消',
-          '文件没有被删除 :)',
-          'error'
-        )
-      }
-    })
-  }
 
 </script>
 {% endblock scripts %}

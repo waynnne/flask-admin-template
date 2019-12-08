@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
-  {# 移动端自适应 #}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>{% block title %}{% endblock title %} - Flask Admin Template</title>
-
-  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
-  <!-- FontAwesome图标 -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fa/css/all.min.css') }}">
-  <!-- 自定义样式 -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+  <!-- css Begin -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugins/fa/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- css End -->
 </head>
 
 
-<body class="hold-transition auth-page">
-  <div class="auth-box">
-    <div class="auth-logo">
-      <a><b>Flask</b> Admin Template</a>
-    </div>
-
-    <div class="card">
-      <div class="card-body auth-card-body">
-        <p class="auth-box-title">{% block login_or_register %}{% endblock login_or_register %}</p>
+<body>
+  <div class="accountbg"></div>
+  <div class="wrapper-page">
+    <div class="card auth-card shadow-none">
+      <div class="card-body">
+        <div class="text-center m-t-0 m-b-15">
+          <div class="logo logo-admin"><img src="{{ url_for('static', filename="img/aurora.png") }}" alt="" height="64"></div>
+        </div>
+        <h5 class="font-18 text-center auth-title">{% block auth_title %}{% endblock auth_title %}</h5>
         {% block content %}{% endblock content %}
       </div>
     </div>

@@ -14,12 +14,18 @@ def index():
     return "Hello, Flask!"
 
 
+@public_bp.route('/modal')
+@login_required
+def modal():
+    return render_template("public/modal.html")
+
+
 @public_bp.route('/admin')
 @login_required
 def admin():
     # TODO 用户信息传递
     user = {
-        'username': 'waynnne',
+        'username': '管理员',
         'email': 'waynnne@mail.com'
     }
     return render_template("public/index.html", user=user)

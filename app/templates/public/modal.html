@@ -1,0 +1,57 @@
+{% extends "public/layout.html" %}
+{% block title %}Demo{% endblock title %}
+{% block content_title %}Demo{% endblock content_title %}
+{% block content_locator %}Demo{% endblock content_locator %}
+{% block content %}
+<!-- 自适应宽度容器 -->
+
+{#<div class="row">#}
+{#  <div class="col-12">#}
+    <div class="container-fluid">
+    <div class="card m-b-30">
+      <div class="card-body">
+        <h4 class="mt-0 header-title">模态框示例</h4>
+        <p class="sub-title">模态框（Modal）是覆盖在父窗体上的子窗体。通常，目的是显示来自一个单独的源的内容，可以在不离开父窗体的情况下有一些互动。子窗体可提供信息、交互等。</p>
+
+        <div class="row">
+          <div class="col-sm-6 col-md-3 m-t-30">
+            <div class=" text-center">
+              <p class="text-muted">Standard Modal</p>
+              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#myModal">Standard Modal</button>
+            </div>
+            <!-- sample modal content -->
+            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myModalLabel">标准模态框</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h5 class="font-16">模态框示例</h5>
+                    <p>模态框（Modal）是覆盖在父窗体上的子窗体。通常，目的是显示来自一个单独的源的内容，可以在不离开父窗体的情况下有一些互动。子窗体可提供信息、交互等。</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary waves-effect waves-light">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{#</div>#}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+
+</script>
+{% endblock scripts %}

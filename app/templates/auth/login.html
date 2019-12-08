@@ -3,7 +3,7 @@
 
 {% block title %}登录{% endblock title %}
 
-{% block login_or_register %}登录系统{% endblock login_or_register %}
+{% block auth_title %}登录 Flask Admin Template{% endblock auth_title %}
 
 {% block content %}
  {{ _wtf.quick_form(form, form_type="inline", button_map={'submit':'success', }, id='login_form') }}
