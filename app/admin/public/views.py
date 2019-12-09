@@ -8,7 +8,6 @@ from app.admin.public import public_bp
 from app.extensions import db
 
 
-@public_bp.route('/')
 @public_bp.route('/index')
 def index():
     return "Hello, Flask!"
@@ -20,6 +19,7 @@ def modal():
     return render_template("public/modal.html")
 
 
+@public_bp.route('/')
 @public_bp.route('/admin')
 @login_required
 def admin():
