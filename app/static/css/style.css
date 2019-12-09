@@ -828,7 +828,8 @@ dt {
 .topbar .topbar-left {
   background-color: #171e40;
   float: left;
-  text-align: center;
+  text-align: left;
+  padding-left: 1.5rem;
   height: 55px;
   position: relative;
   width: 240px;
@@ -842,6 +843,12 @@ dt {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+.topbar .topbar-left .logo .logo-light img {
+  width: 24px;
+  vertical-align: text-top;
+  margin-right: 1rem;
 }
 
 .topbar .topbar-left .logo .logo-sm {
@@ -1155,8 +1162,11 @@ dt {
 
 .enlarged #wrapper .topbar .topbar-left .logo .logo-sm {
   display: block;
-  line-height: 55px;
-  font-size: 28px;
+}
+
+.enlarged #wrapper .topbar .topbar-left .logo .logo-sm img {
+  width: 24px;
+  vertical-align: text-top;
 }
 
 .enlarged #wrapper .navbar-custom {
@@ -1331,14 +1341,19 @@ dt {
     width: 70px !important;
     height: 55px;
   }
-  .topbar .topbar-left .logo-light {
-    display: none !important;
+  .topbar .topbar-left .logo .logo-light {
+    display: none;
   }
-  .topbar .topbar-left .logo-sm {
-    display: block !important;
-    line-height: 55px !important;
-    font-size: 28px;
+
+  .topbar .topbar-left .logo .logo-sm {
+    display: block;
   }
+
+  .topbar .topbar-left .logo-sm img {
+    width: 24px;
+    vertical-align: text-top;
+  }
+
   .navbar-custom {
     margin-left: 55px !important;
   }
@@ -3292,7 +3307,7 @@ table.focus-on tbody tr.focused td {
 
 .wrapper-page {
   margin: 7.5% auto;
-  width: 420px;
+  width: 380px;
   position: relative;
 }
 
@@ -3308,7 +3323,7 @@ table.focus-on tbody tr.focused td {
 }
 
 .auth-card .card-body {
-  padding: 3rem;
+  padding: 2rem 3rem;
 }
 
 .auth-card .auth-title {
