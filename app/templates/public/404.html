@@ -3,10 +3,22 @@
 {% block content_title %}错误{% endblock content_title %}
 {% block content_locator %}404{% endblock content_locator %}
 {% block content %}
-<!-- 自适应宽度容器 -->
-<div class="container-fluid">
-  <h1>File Not Found</h1>
-  <p><a href="{{ url_for('public.admin') }}">返回首页</a></p>
+
+<div class="error-container-placeholder"></div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-md-8">
+      <div class="card shadow-lg">
+        <div class="card-block">
+          <div class="text-center p-3">
+            <h1 class="error-page mt-4"><span>404!</span></h1>
+            <h4 class="mb-4 mt-5">Sorry, 你要找的页面走丢了</h4>
+            <a class="btn btn-primary mb-4 waves-effect waves-light" href="{{ url_for('public.admin') }}"><i class="fa fa-home"></i> 返回首页</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- /.结束自适应宽度容器 -->
+
 {% endblock content %}

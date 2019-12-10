@@ -43,7 +43,6 @@ TABLES OF CSS
 33. Extra pages
 34. Account pages
 */
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap");
 /* ==============
   General
 ===================*/
@@ -55,7 +54,7 @@ TABLES OF CSS
 body {
   background-repeat: repeat;
   background: #f9f9f9;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lato", sans-serif;
   color: #354558;
   font-size: 13px;
 }
@@ -74,7 +73,7 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 h6 {
@@ -109,6 +108,10 @@ b, strong {
 /*i.fa {*/
   /*vertical-align: middle;*/
 /*}*/
+
+.error-container-placeholder {
+  height: 10vh;
+}
 
 .container-alt {
   margin-left: auto;
@@ -171,14 +174,6 @@ b, strong {
   visibility: visible;
   opacity: 1;
   margin-top: 0px !important;
-}
-
-.breadcrumb > li + li:before {
-  padding: 0 5px;
-  color: #9ca8b3;
-  content: "\f054"; !important;
-  /*font-family: 'Font Awesome 4.7';*/
-  /*font-weight: 900;*/
 }
 
 .blockquote {
@@ -934,7 +929,7 @@ dt {
   margin-left: 45px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .notification-list .notify-item .notify-details span {
@@ -944,7 +939,7 @@ dt {
   white-space: normal;
   font-size: 12px;
   font-weight: normal;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .notification-list .language-switch a img {
@@ -965,6 +960,10 @@ dt {
   vertical-align: unset;
 }
 
+.notification-list .profile-dropdown {
+  padding: 1rem 2rem;
+}
+
 .notification-list .profile-dropdown i {
   font-size: 17px;
   vertical-align: text-top;
@@ -978,6 +977,11 @@ dt {
 
 .profile-avatar {
   border-radius: .25rem;
+}
+
+.profile-avatar img {
+  width: 168px;
+  margin: 1rem 1rem 0 1rem;
 }
 
 .profile-footer {
@@ -1075,7 +1079,7 @@ dt {
   position: relative;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 #sidebar-menu > ul > li > a:hover, #sidebar-menu > ul > li > a:focus, #sidebar-menu > ul > li > a:active {
@@ -1301,7 +1305,7 @@ dt {
   background-color: #ffffff;
   right: 0;
   left: 240px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 /******* Responsive *******/
@@ -2502,7 +2506,7 @@ label {
 /* Morris chart */
 /* Morris chart */
 .morris-charts text {
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Lato", sans-serif !important;
 }
 
 .morris-hover.morris-default-style {
@@ -3405,7 +3409,7 @@ table.focus-on tbody tr.focused td {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 110px;
-  line-height: .7;
+  line-height: .8;
   position: relative;
 }
 

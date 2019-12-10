@@ -22,7 +22,6 @@
       <!-- logo -->
       <div class="topbar-left">
         <a href="#" class="logo">
-{#          <span class="logo-light"><i class="fa fa-adn"></i> Aurora</span>#}
           <span class="logo-light"><img src="{{ url_for('static', filename='img/logo-r.png') }}" alt="logo">Aurora</span>
           <span class="logo-sm"><img src="{{ url_for('static', filename='img/logo-r.png') }}" alt="logo"></span>
         </a>
@@ -50,13 +49,13 @@
               <div class="notification-item-list">
                 <!-- item-->
                 <div class="dropdown-item notify-item active">
-                  <div class="notify-icon bg-success"></div>
-                  <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
+                  <div class="notify-icon bg-success"><i class="fa fa-comments-o"></i></div>
+                  <p class="notify-details"><b>通知1</b><span class="text-muted">测试信息.</span></p>
                 </div>
                 <!-- item-->
-                <div class="dropdown-item notify-item active">
-                  <div class="notify-icon bg-success"></div>
-                  <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
+                <div class="dropdown-item notify-item">
+                  <div class="notify-icon bg-info"><i class="fa fa-comments-o"></i></div>
+                  <p class="notify-details"><b>通知2</b><span class="text-muted">测试信息.</span></p>
                 </div>
               </div>
               <a href="#" class="dropdown-item text-center notify-all text-primary"> 查看全部 </a>
@@ -69,10 +68,14 @@
                 欢迎, {{ current_user.username }} &#8204;
                 <i class="fa fa-caret-down"></i>
               </a>
-              <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown text-center">
                 <!-- item-->
                 <div class="profile-avatar">
-                  <img src="{{ url_for('static', filename='img/avatar.jpg') }}" alt="user">
+                  <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="user">
+                </div>
+                <div class="profile-info">
+                  <h4>{{ current_user.username }}</h4>
+                  <p>{{ current_user.email }}</p>
                 </div>
                 <div class="profile-footer">
                   <a class="btn btn-light waves-effect profile-home" href="{{ url_for('public.admin') }}"><i class="fa fa-home"></i> 首页</a>
